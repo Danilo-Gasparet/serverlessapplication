@@ -15,8 +15,22 @@ provider:
 
 
 functions:
-  hello:
-    handler: handler.hello
+  GET_updatedText:
+    handler: backend/endpoints/GET_updatedText.handler
+    events: 
+        - http:
+            path: get-updatedtext/{requestID}
+            method: GET
+            cors: true
+            private: true
+  POST_processText:
+    handler: backend/endpoints/POST_processText.handler
+    events: 
+        - http:
+            path: post-processtext
+            method: POST
+            cors: true
+            private: true
 
 
 resources: 
