@@ -1,4 +1,4 @@
-const {"v4": uuidv4} = require('uuid');
+const uuid = require('lambda-uuid');
 const Responses = require('../common/API_responses');
 const Dynamo = require('../common/Dynamo');
 const tableName = process.env.tableName;
@@ -12,7 +12,7 @@ exports.handler = async event => {
     }
 
     const user = JSON.parse(event.body);
-    user.requestID = uuidv4();
+    user.requestID = uuid();
     user.timestamp = new Date().getTime();
     user.processedText = (user.textToProcess).replace(user.find,user.replace);
     
