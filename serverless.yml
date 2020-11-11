@@ -5,6 +5,34 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
+  environment: 
+    tableName: ${self:custom.tableName}
+  iamRoleStatements:
+    - Effect: 'Allow'   
+      Action:
+        - dynamodb:*
+      Resource: 'arn:aws:dynamodb:*:*:table/${self:custom.tableName}'
+
+
+functions:
+  hello:
+    handler: handler.hello
+
+
+resources: 
+  Resources: 
+    DynamoDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: requestID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: requestID
+            KeyType: HASH
+
+        BillingMode: PAY_PER_REQUEST 
 
 
 plugins:
@@ -12,12 +40,8 @@ plugins:
 
 
 custom:
+  tableName: requestDataTable
   client:
     bucketName: sandbox-gasparet-serverless-application-api-frontend
     distributionFolder: frontend
     errorDocument: index.html
-
-
-functions:
-  hello:
-    handler: handler.hello
