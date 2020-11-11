@@ -1,0 +1,23 @@
+service: serverlessapplicationapi
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+
+plugins:
+  - serverless-finch
+
+
+custom:
+  client:
+    bucketName: sandbox-gasparet-serverless-application-api-frontend
+    distributionFolder: frontend
+    errorDocument: index.html
+
+
+functions:
+  hello:
+    handler: handler.hello
