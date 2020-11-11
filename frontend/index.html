@@ -1,1 +1,67 @@
-Hello World Test Invalidate Cache again!
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+
+    <!-- Site Properties -->
+    <title>Serverless Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Site Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Find And Replace - Serverless</a>
+    </nav>
+
+    <!-- Jumbotron Containing Form -->
+    <div class="jumbotron">
+        <h1 class="display-3 deloitteH1 ">Hallo Deloitte</h1>
+        <p class="lead">In this assignment I have made use of the Serverless Framework and the following AWS Services: IAM, Cloud Formation, S3, Lambda, DynamoDB, API Gateway, CloudFront, Route53</p>
+        <hr class="my-4">
+        <p class="lead">
+            <form>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputFind">What would you like to find ?</label>
+                                <input type="text" class="form-control inputBackgroundColor" id="inputFind"  placeholder="Find">
+                                </div>
+                                <div class="form-group">
+                                <label for="inputReplace">What would you like to replace ?</label>
+                                <input type="text" class="form-control inputBackgroundColor" id="inputReplace" placeholder="Replace">
+                                </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="inputTextArea">Please enter your text here:</label>
+                                <textarea class="form-control inputTextBackgroundColor" id="exampleTextarea" rows="4" placeholder="Some random text goes here"></textarea>
+                                </div>
+                        </div>
+                    </div>
+                    <div></br></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn buttonstyle"><b>Submit</b></button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <textarea disabled class="form-control outputBackgroundColor" id="exampleTextarea" rows="4"></textarea>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+.hidden {
+  display: none;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+body {
+  background: #1B1C1D;
+}
+
+.jumbotron {
+  background-color: #1B1C1D;
+  color: #aeaeae;
+}
+
+.inputBackgroundColor {
+  background-color: #eeeeee;
+  border-color: #1B1C1D;
+}
+
+.inputTextBackgroundColor{
+  background-color: #eeeeee;
+  border-color: #1B1C1D;
+  height: 125px;
+}
+
+.outputBackgroundColor:disabled {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  height: 300px;
+}
+
+.buttonstyle {
+  background-color: #eeeeee;
+  border-color: #1B1C1D;
+  width: 100%;
+}
+
+.buttonstyle:hover {
+  background-color: #86BC24;
+  border-color: #1B1C1D;
+  width: 100%;
+}
+
+.deloitteH1 {
+  color: #86BC24;
+}
