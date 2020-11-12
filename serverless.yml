@@ -21,8 +21,7 @@ functions:
         - http:
             path: get-updatedtext/{requestID}
             method: GET
-            cors: true  
-          
+            cors: true    
   POST_processText:
     handler: backend/endpoints/POST_processText.handler
     events: 

@@ -4,8 +4,8 @@ $(document).ready(function(){
   });
 
 // API endpoints
-var POST_processText_endpoint =  "https://jzqjrtsig9.execute-api.us-east-1.amazonaws.com/dev/post-processtext"
-var get_votes_endpoint = "https://jzqjrtsig9.execute-api.us-east-1.amazonaws.com/dev/get-updatedtext/"
+var POST_processText_endpoint =  "https://c1ykal5srd.execute-api.us-east-1.amazonaws.com/dev/post-processtext"
+var get_votes_endpoint = "https://c1ykal5srd.execute-api.us-east-1.amazonaws.com/dev/get-updatedtext/"
 
 // Function to retrieve and validate input 
 function recordInput() {  

@@ -8,7 +8,7 @@ exports.handler = async event => {
 
     //Failed without an ID 
     if (!event.body) {
-        return Responses._400({ message: 'Request missing required email field' });
+        return Responses._400({ message: 'Request missing body' });
     }
 
     const user = JSON.parse(event.body);
