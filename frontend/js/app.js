@@ -4,18 +4,15 @@ $(document).ready(function(){
   });
 
 // API endpoints
-var POST_processText_endpoint =  "https://9p79fesj4b.execute-api.us-east-1.amazonaws.com/dev/post-processtext";
-var get_votes_endpoint = "https://EXAMPLE_REPLACE_ME.execute-api.us-east-1.amazonaws.com/dev/votes";
+var POST_processText_endpoint =  "https://jzqjrtsig9.execute-api.us-east-1.amazonaws.com/dev/post-processtext"
+//var get_votes_endpoint = "https://EXAMPLE_REPLACE_ME.execute-api.us-east-1.amazonaws.com/dev/votes";
 
 // Function to retrieve and validate input 
 function recordInput() {  
     var textToProcess = document.getElementById("inputStringBody").value
     var find = document.getElementById("inputStringFind").value
     var replace = document.getElementById("inputStringReplace").value
-    var email = "test@emial.com";
-
-    console.log("Text to process:" + textToProcess + "Text to find:" + find + "Text to replace:" + replace);
-
+    var email = "test@emial.com"
     if ( (typeof textToProcess) !== "string" || textToProcess==="")
     {
         alert("Please enter the text you would like to process!")
@@ -42,19 +39,25 @@ function recordInput() {
 
 // Function to POST input paramters to backend
 async function processText(textToProcess, find, replace, email) {
-    const response = await fetch(POST_processText_endpoint, {
-    method: "POST",
-    mode: 'cors',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-        "email" : email,
-        "textToProcess" : textToProcess,
-        "find" : find ,
-        "replace" : replace
-    })
-})
-const result_json = await response.json()
-setOutputText(result_json)
+   
+    try{
+        const response = await fetch(POST_processText_endpoint, {
+            method: "POST",
+            mode: 'no-cors',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                "email" : email,
+                "textToProcess" : textToProcess,
+                "find" : find ,
+                "replace" : replace
+            })
+        });
+        const result_json = await response.json()
+        setOutputText(result_json)
+    }catch(e){
+        console.log("error", e);
+        throw err;
+    }   
 }
 
 // Function to output the processed response
