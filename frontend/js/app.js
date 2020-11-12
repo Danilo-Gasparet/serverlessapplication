@@ -1,35 +1,42 @@
 $(document).ready(function(){
     //refreshVoteCounts()
-    document.getElementById("btnSubmitBody").addEventListener("click", recordInput);
+    document.getElementById("btnSubmitBody").addEventListener("click", recordInput)
   });
 
 // API endpoints
-var POST_processText_endpoint = "https://EXAMPLE_REPLACE_ME.execute-api.us-east-1.amazonaws.com/dev/song/vote"
-var get_votes_endpoint = "https://EXAMPLE_REPLACE_ME.execute-api.us-east-1.amazonaws.com/dev/votes"
+var POST_processText_endpoint =  "https://9p79fesj4b.execute-api.us-east-1.amazonaws.com/dev/post-processtext";
+var get_votes_endpoint = "https://EXAMPLE_REPLACE_ME.execute-api.us-east-1.amazonaws.com/dev/votes";
 
 // Function to retrieve and validate input 
 function recordInput() {  
-    var textToProcess = document.getElementsById("inputStringBody").innerText
-    var find = document.getElementsById("inputStringFind").innerText
-    var replace = document.getElementsById("inputStringReplace").innerText
-    var email = "test@emial.com"
-    if ( (typeof textToProcess) !== "string")
+    var textToProcess = document.getElementById("inputStringBody").value
+    var find = document.getElementById("inputStringFind").value
+    var replace = document.getElementById("inputStringReplace").value
+    var email = "test@emial.com";
+
+    console.log("Text to process:" + textToProcess + "Text to find:" + find + "Text to replace:" + replace);
+
+    if ( (typeof textToProcess) !== "string" || textToProcess==="")
     {
         alert("Please enter the text you would like to process!")
+        return;
     }
-    if ( (typeof find) !== "string")
+    if ( (typeof find) !== "string" || find==="")
     {
         alert("Please enter the text you would like to find!")
+        return;
     }
-    if ( (typeof replace) !== "string")
+    if ( (typeof replace) !== "string" || replace==="")
     {
         alert("Please enter the text you would like to replace!")
+        return;
     }
-    if ( (typeof email) !== "string")
+    if ( (typeof email) !== "string" || email==="")
     {
         alert("Please enter a valid email address!")
+        return;
     }
-    processText(textToProcess, find, replace, email)
+    processText(textToProcess, find, replace, email);
     console.log("Text to process:" + textToProcess + "Text to find:" + find + "Text to replace:" + replace)
   }
 
@@ -51,7 +58,7 @@ setOutputText(result_json)
 }
 
 // Function to output the processed response
-function setVotes(result_json) {
-    var JSONOutput = JSON.stringify(result_json)
-    document.getElementsById("inputStringFind").innerText = JSONOutput;
+function setOutputText(result_json) {
+    var JSONOutput = JSON.stringify(result_json);
+    document.getElementById("outputStringFind").value = JSONOutput
 }
