@@ -48,3 +48,8 @@ body {
 .deloitteH1 {
   color: #86BC24;
 }
+
+.searchBackgroundColor{
+  background-color: #bfbfbf;
+  border-color: #1B1C1D;
+}

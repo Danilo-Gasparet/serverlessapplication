@@ -39,22 +39,42 @@
                             <div class="form-group">
                                 <label for="inputStringFind">What would you like to find ?</label>
                                 <input id="inputStringFind" type="text" class="form-control inputBackgroundColor" placeholder="Find">
-                                </div>
-                                <div class="form-group">
-                                <label for="inputStringReplace">What would you like to replace the above with?</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStringReplace">What would you like to replace the above?</label>
                                 <input id="inputStringReplace" type="text" class="form-control inputBackgroundColor" placeholder="Replace">
-                                </div>
+                            </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label for="inputStringBody">Please enter your text here:</label>
-                                <textarea id="inputStringBody" class="form-control inputTextBackgroundColor" rows="4" placeholder="Some random text goes here"></textarea>
-                                </div>
+                                <textarea id="inputStringBody" style="height: 125px;" class="form-control inputTextBackgroundColor" rows="4" placeholder="Some random text goes here"></textarea>
+                            </div>
                         </div>
                     </div>
                     <div></br></div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="inputSearchID">Fetch preveous request by requestID</label>
+                                <input id="inputSearchID" type="text" class="form-control searchBackgroundColor" placeholder="requestID (UUID)">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="form-check">
+                                <div class="label" style="height: 30px;"></div>
+                                <label class="form-check-label">
+                                    <input id="caseSensative" class="form-check-input" type="checkbox" value="" checked="">
+                                    Case Sensative
+                                </label>
+                                <label class="form-check-label">
+                                    <input id="replaceAll" class="form-check-input" type="checkbox" value="" checked="">
+                                    Replace All
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="label" style="height: 30px;"></div>
                             <button id="btnSubmitBody" type="submit" class="btn buttonstyle"><b>Submit</b></button>
                         </div>
                     </div>

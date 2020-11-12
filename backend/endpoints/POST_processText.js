@@ -14,8 +14,22 @@ exports.handler = async event => {
     const user = JSON.parse(event.body);
     user.requestID = uuid();
     user.timestamp = new Date().getTime();
-    user.processedText = (user.textToProcess).replace(user.find,user.replace);
-    
+
+    //Logic to determine type of find and replace
+    const textFind = user.find
+    if(user.caseSensativeCheck == "false" && user.replaceAllCheck == "true" ){
+        var regexp = new RegExp(textFind, "gi");
+        user.processedText = (user.textToProcess).replace(regexp,user.replace);
+    }else if(user.caseSensativeCheck == "false"){
+        var regexp = new RegExp(textFind, "i");
+        user.processedText = (user.textToProcess).replace(regexp,user.replace);
+    }else if(user.replaceAllCheck == "true"){
+        var regexp = new RegExp(textFind, "g");
+        user.processedText = (user.textToProcess).replace(regexp,user.replace);
+    }else{
+        user.processedText = (user.textToProcess).replace(user.find,user.replace);
+    }
+
     const newUser = await Dynamo.write(user, tableName).catch(err => {
         console.log('Error in Dynamo write', err);
         return null;
