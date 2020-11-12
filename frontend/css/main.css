@@ -34,7 +34,7 @@ body {
 }
 
 .buttonstyle {
-  background-color: #eeeeee;
+  background-color: #8bac4e;
   border-color: #1B1C1D;
   width: 100%;
 }
@@ -52,4 +52,8 @@ body {
 .searchBackgroundColor{
   background-color: #bfbfbf;
   border-color: #1B1C1D;
+}
+
+hr{
+  border-color: #ffffff;
 }
