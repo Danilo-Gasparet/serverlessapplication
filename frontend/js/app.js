@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    //refreshVoteCounts()
-    document.getElementById("btnSubmitBody").addEventListener("click", recordInput)
+    document.getElementById("btnSubmitBody").addEventListener("click", recordInput);
   });
 
 // API endpoints
@@ -18,7 +17,7 @@ function recordInput() {
 
     if(serachID){
         getRequestByID(serachID)
-        console.log("search UUID:" + serachID)
+        console.log(" | search UUID: " + serachID)
     }else{
 
         var email = "test@emial.com"
@@ -44,7 +43,7 @@ function recordInput() {
         }
 
         processText(textToProcess, find, replace, email, caseSensativeCheck, replaceAllCheck);
-        console.log("Text to process:" + textToProcess + "Text to find:" + find + "Text to replace:" + replace + "Case sensative:" + caseSensativeCheck + "replace all:" + replaceAllCheck)
+        console.log(" | Text to process: " + textToProcess + " | Text to find: " + find + " | Text to replace: " + replace + " | Case sensative: " + caseSensativeCheck + " | Replace all: " + replaceAllCheck)
     }  
   }
 
@@ -67,9 +66,8 @@ async function processText(textToProcess, find, replace, email, caseSensativeChe
         });
         const result_json = await response.json()
         setOutputText(result_json)
-    }catch(e){
-        console.log("error", e);
-        throw err;
+    }catch(err){
+        console.error("error", err);
     }   
 }
 
@@ -80,9 +78,8 @@ async function getRequestByID(serachID) {
         const response = await fetch(getPath);
         const result_json = await response.json();
         setOutputText(result_json)
-    }catch(e){
-        console.log("error", e);
-        throw err;
+    }catch(err){
+        console.error("error", err);
     }  
 }
 
